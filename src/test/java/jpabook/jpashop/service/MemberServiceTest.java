@@ -35,7 +35,7 @@ class MemberServiceTest {
 
         //then
         em.flush();
-        assertEquals(member, memberRepository.findOne(saveId));
+        assertEquals(member, memberRepository.findById(saveId).get());
     }
 
     @DisplayName("회원가입 시 중복이 발생하면 IllegalStateException 이 발생하고, 에러메시지가 동일한지 검증한다.")
